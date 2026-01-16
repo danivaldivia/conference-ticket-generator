@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="./css/global/body.css" />
     <link rel="stylesheet" href="./settings/fonts.css" />
     <link rel="stylesheet" href="./settings/variables.css" />
+    <link rel="stylesheet" href="./css/components/brand-heading.css" />
     <title>Conference ticket generator</title>
   </head>
   <body>
-    <header>
+    <header class="brand-heading">
       <div class="brand">
         <img
           width="30"
@@ -21,5 +22,43 @@
       </div>
       <span class="brand--name">Coding Conf</span>
     </header>
+
+    <main>
+      <section class="intro">
+        <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+        <p>Secure your spot at next year’s biggest coding conference.</p>
+      </section>
+
+      <section class="registration">
+        <form action="">
+          <div>
+            <p>Upload Avatar</p>
+            <div class="upload-avatar">
+              <div class="upload-avatar__icon">
+                <img src="./assets/images/cloud-icon.svg" alt="" />
+              </div>
+              <p>Drag and drop or click to upload</p>
+            </div>
+            <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+          </div>
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label for="mail">Email Address</label>
+            <input type="mail" />
+          </div>
+          <div>
+            <label for="user">GitHub Username</label>
+            <input type="text" />
+          </div>
+
+          <div>
+            <button>Generate My Ticket</button>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

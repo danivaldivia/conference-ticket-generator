@@ -1,8 +1,4 @@
 body {
-  /* background-image: url("../../assets/images/background.webp"),
-    url("../../assets/images/line-element-1.webp"),
-    url("../../assets/images/line-element-2.webp"),
-    url("../../assets/images/circles.webp"); */
   background-size: cover;
   min-height: 100vh;
   margin: 0;
@@ -13,4 +9,5 @@ body {
     url("../../assets/images/line-element-2.webp") right 5%/20%,
     url("../../assets/images/background.webp") 100%;
   background-repeat: no-repeat;
+  color: var(--white);
 }
