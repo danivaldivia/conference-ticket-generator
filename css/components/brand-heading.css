@@ -1,0 +1,21 @@
+.brand-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block: 2rem 2.5rem;
+}
+
+.brand {
+  width: 23px;
+}
+
+.brand img {
+  width: 100%;
+  height: auto;
+}
+
+.brand--name {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
