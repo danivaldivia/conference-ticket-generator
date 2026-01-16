@@ -1,0 +1,32 @@
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/inconsolata-v37-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/inconsolata-v37-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/inconsolata-v37-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/inconsolata-v37-latin-800.woff2") format("woff2");
+}
