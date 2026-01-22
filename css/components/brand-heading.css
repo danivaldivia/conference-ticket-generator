@@ -6,16 +6,17 @@
   margin-block: 2rem 2.5rem;
 }
 
-.brand {
-  width: 23px;
+.brand-heading__logo {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.brand img {
+.brand-heading__logo img {
   width: 100%;
   height: auto;
 }
 
-.brand--name {
-  font-size: 1.125rem;
+.brand-heading__name {
+  font-size: 1.25rem;
   font-weight: bold;
 }

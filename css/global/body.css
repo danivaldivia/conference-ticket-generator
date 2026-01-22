@@ -1,13 +1,11 @@
 body {
-  background-size: cover;
   min-height: 100vh;
   margin: 0;
   font-family: "Inconsolata";
 
-  background: url("../../assets/images/circles.webp") 65% 48%/ 10%,
-    url("../../assets/images/line-element-1.webp") left bottom/30%,
-    url("../../assets/images/line-element-2.webp") right 5%/20%,
+  background:
+    url("../../assets/images/line_pattern.webp"),
     url("../../assets/images/background.webp") 100%;
-  background-repeat: no-repeat;
+  background-size: cover;
   color: var(--white);
 }
