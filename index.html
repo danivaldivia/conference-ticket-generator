@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/images/favicon.ico" type="image/svg" />
     <link rel="stylesheet" href="./css/global/body.css" />
-    <link rel="stylesheet" href="./settings/fonts.css" />
-    <link rel="stylesheet" href="./settings/variables.css" />
+    <link rel="stylesheet" href="./css/settings/fonts.css" />
+    <link rel="stylesheet" href="./css/settings/variables.css" />
+    <link rel="stylesheet" href="./css/components/brand-heading.css" />
     <title>Conference ticket generator</title>
   </head>
   <body>
-    <header>
-      <div class="brand">
+    <header class="brand-heading">
+      <div class="brand-heading__logo">
         <img
           width="30"
           height="30"
@@ -19,7 +20,110 @@
           alt="logo"
         />
       </div>
-      <span class="brand--name">Coding Conf</span>
+      <span class="brand-heading__name">Coding Conf</span>
     </header>
+
+    <main class="main">
+      <section class="intro">
+        <h1 class="intro__title">
+          Your Journey to Coding Conf 2025 Starts Here!
+        </h1>
+        <p class="intro__description">
+          Secure your spot at next year’s biggest coding conference.
+        </p>
+      </section>
+
+      <section class="registration">
+        <form class="registration-form" action="post">
+          <fieldset class="registration-form__fieldset">
+            <div class="form-field form-field--file">
+              <label for="avatar" class="form-field__label"
+                >Upload Avatar</label
+              >
+              <div class="file-input">
+                <div class="file-input__target">
+                  <div class="file-input__box">
+                    <div class="file-input__instruction" aria-hidden="true">
+                      <div class="file-input__icon">
+                        <img
+                          src="./assets/images/cloud-icon.svg"
+                          alt="cloud icon"
+                          width="30"
+                          height="30"
+                        />
+                      </div>
+                      <span class="file-input__drag-text"
+                        >Drag and drop or click to upload</span
+                      >
+                    </div>
+
+                    <div class="file-input__status" aria-live="polite" hidden>
+                      <div class="file-input__filename"></div>
+                    </div>
+                  </div>
+
+                  <input
+                    type="file"
+                    name="avatar"
+                    id="avatar"
+                    class="file-input__native"
+                    aria-describedby="avatar-required"
+                    accept="image/png, image/jpeg"
+                    required
+                  />
+                </div>
+              </div>
+              <p id="avatar-required" class="form-field__hint">
+                Upload your photo (JPG or PNG, max size: 500KB).
+              </p>
+            </div>
+            <div class="form-field">
+              <label for="full-name" class="form-field__label">Full Name</label>
+              <input
+                type="text"
+                name="full-name"
+                id="full-name"
+                required
+                class="form-field__input"
+                aria-required="true"
+                autocomplete="name"
+              />
+            </div>
+            <div class="form-field">
+              <label for="email" class="form-field__label">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-field__input"
+                placeholder="example@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div class="form-field">
+              <label for="github" class="form-field__label"
+                >GitHub Username</label
+              >
+              <input
+                type="text"
+                name="github"
+                id="github"
+                placeholder="@yourusername"
+                required
+                class="form-field__input"
+                autocomplete="username"
+              />
+            </div>
+
+            <div>
+              <button type="submit" class="registration-form__submit">
+                Generate My Ticket
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
