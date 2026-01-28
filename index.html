@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/images/favicon.ico" type="image/svg" />
     <link rel="stylesheet" href="./css/global/body.css" />
-    <link rel="stylesheet" href="./settings/fonts.css" />
-    <link rel="stylesheet" href="./settings/variables.css" />
     <link rel="stylesheet" href="./css/components/brand-header.css" />
     <link rel="stylesheet" href="./css/containers/main.css" />
     <link rel="stylesheet" href="./css/components/intro.css" />
+    <link rel="stylesheet" href="./css/settings/fonts.css" />
+    <link rel="stylesheet" href="./css/settings/variables.css" />
     <title>Conference ticket generator</title>
   </head>
   <body>
@@ -42,33 +42,40 @@
               <label for="avatar" class="form-field__label"
                 >Upload Avatar</label
               >
-              <div
-                class="form-field__upload"
-                role="button"
-                aria-label="Subir foto de perfil"
-              >
-                <input
-                  type="file"
-                  name="avatar"
-                  id="avatar"
-                  class="form-field__input form-field__input--file"
-                  aria-describedby="avatar-required"
-                  accept="image/png, image/jpeg"
-                  required
-                />
-                <div class="form-field__upload-icon">
-                  <img
-                    src="./assets/images/cloud-icon.svg"
-                    alt="cloud icon"
-                    width="30"
-                    height="30"
+              <div class="file-input">
+                <div class="file-input__target">
+                  <div class="file-input__box">
+                    <div class="file-input__instruction" aria-hidden="true">
+                      <div class="file-input__icon">
+                        <img
+                          src="./assets/images/cloud-icon.svg"
+                          alt="cloud icon"
+                          width="30"
+                          height="30"
+                        />
+                      </div>
+                      <span class="file-input__drag-text"
+                        >Drag and drop or click to upload</span
+                      >
+                    </div>
+
+                    <div class="file-input__status" aria-live="polite" hidden>
+                      <div class="file-input__filename"></div>
+                    </div>
+                  </div>
+
+                  <input
+                    type="file"
+                    name="avatar"
+                    id="avatar"
+                    class="file-input__native"
+                    aria-describedby="avatar-required"
+                    accept="image/png, image/jpeg"
+                    required
                   />
                 </div>
-                <p class="form-field__upload-text">
-                  Drag and drop or click to upload
-                </p>
               </div>
-              <p id="avatar-required" class="form-field__required">
+              <p id="avatar-required" class="form-field__hint">
                 Upload your photo (JPG or PNG, max size: 500KB).
               </p>
             </div>
@@ -105,7 +112,7 @@
                 name="github"
                 id="github"
                 placeholder="@yourusername"
-                arequired
+                required
                 class="form-field__input"
                 autocomplete="username"
               />
