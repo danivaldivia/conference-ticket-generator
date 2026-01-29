@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/images/favicon.ico" type="image/svg" />
+
     <link rel="stylesheet" href="./css/global/body.css" />
+
     <link rel="stylesheet" href="./css/components/brand-header.css" />
-    <link rel="stylesheet" href="./css/containers/main.css" />
+    <link rel="stylesheet" href="./css/global/main.css" />
     <link rel="stylesheet" href="./css/components/intro.css" />
+    <link rel="stylesheet" href="./css/components/registration.css" />
+    <link rel="stylesheet" href="./css/components/fieldset.css" />
+    <link rel="stylesheet" href="./css/components/form-field.css" />
+    <link rel="stylesheet" href="./css/components/submit-btn.css" />
     <link rel="stylesheet" href="./css/settings/fonts.css" />
     <link rel="stylesheet" href="./css/settings/variables.css" />
     <title>Conference ticket generator</title>
@@ -68,7 +74,7 @@
                     type="file"
                     name="avatar"
                     id="avatar"
-                    class="file-input__native"
+                    class="form-field__input file-input__native"
                     aria-describedby="avatar-required"
                     accept="image/png, image/jpeg"
                     required
@@ -118,7 +124,7 @@
               />
             </div>
 
-            <div>
+            <div class="submit-btn">
               <button type="submit" class="registration-form__submit">
                 Generate My Ticket
               </button>
