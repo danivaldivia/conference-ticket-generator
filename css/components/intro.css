@@ -9,7 +9,7 @@
 
 .intro__title {
   margin: 0;
-  font-size: 1.875rem;
+  font-size: 1.8rem;
   line-height: 1.1;
   letter-spacing: -0.01em;
   font-weight: 800;
@@ -22,4 +22,14 @@
   font-size: 1.25rem;
   line-height: 1.2;
   letter-spacing: -0.025em;
+}
+
+@media screen and (min-width: 768px) {
+  .intro__title {
+    font-size: 3.75rem;
+  }
+
+  .intro__description {
+    font-size: 1.5rem;
+  }
 }

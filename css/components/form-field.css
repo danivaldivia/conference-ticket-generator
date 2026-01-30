@@ -1,0 +1,37 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-field__label {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.form-field__input {
+  background: rgba(255, 255, 255, 8%);
+  backdrop-filter: blur(0.3rem);
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--neutral500);
+
+  font-family: "Inconsolata";
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--neutral300);
+}
+
+.form-field__input:hover {
+  background: rgba(255, 255, 255, 20%);
+}
+
+.form-field__input:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 0.25rem var(--neutral900),
+    0 0 0 0.3rem var(--neutral500);
+}
