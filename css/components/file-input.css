@@ -34,13 +34,12 @@
 }
 
 .file-input__native {
+  height: 100%;
+  width: 100%;
   border-radius: 0.75rem;
   border-style: dashed;
   cursor: pointer;
-  height: 100%;
   position: absolute;
-  z-index: 1;
-  width: 100%;
   top: 0;
   left: 0;
   text-indent: -999em;
@@ -55,4 +54,18 @@
   box-shadow:
     0 0 0 0.25rem var(--neutral900),
     0 0 0 0.3rem var(--neutral500);
+}
+
+.form-field__message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-field__hint {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--neutral300);
 }
