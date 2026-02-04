@@ -43,7 +43,7 @@
       </section>
 
       <section class="registration">
-        <form class="registration-form" action="post">
+        <form id="form" class="registration-form" action="post">
           <fieldset class="registration-form__fieldset">
             <div class="form-field form-field--file">
               <label for="avatar" class="form-field__label"
@@ -103,21 +103,22 @@
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
+                  class="important-icon"
                 >
                   <path
                     d="M3 12C3 16.9699 7.02908 21 12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12Z"
-                    stroke="white"
+                    stroke="currentColor"
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
                   <path
                     d="M12.0057 15.6932V11.3936V15.6932ZM12 8.35426V8.29102V8.35426Z"
-                    fill="white"
+                    fill="currentColor"
                   />
                   <path
                     d="M12.0057 15.6932V11.3936M12 8.35426V8.29102"
-                    stroke="white"
+                    stroke="currentColor"
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -140,7 +141,7 @@
                 autocomplete="name"
               />
             </div>
-            <div class="form-field">
+            <div class="form-field email-input">
               <label for="email" class="form-field__label">Email Address</label>
               <input
                 type="email"
@@ -152,7 +153,7 @@
                 autocomplete="email"
               />
             </div>
-            <div class="form-field">
+            <div class="form-field github-input">
               <label for="github" class="form-field__label"
                 >GitHub Username</label
               >
@@ -172,5 +173,7 @@
         </form>
       </section>
     </main>
+    \
+    <script src="./js/error.js"></script>
   </body>
 </html>
