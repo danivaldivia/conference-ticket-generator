@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function(){
     const inputEmail = document.querySelector('#email')
     const inputGitHub= document.querySelector('#github')
-    const inputAvatar= document.querySelector('#avatar')
 
     inputEmail.addEventListener('blur', validar);
     inputGitHub.addEventListener('blur', validar);
-    // inputAvatar.addEventListener('blur',  validar);
+
 
 
     function validar(e){
