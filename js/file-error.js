@@ -8,11 +8,15 @@ document.addEventListener("DOMContentLoaded", function(){
     const originalMessageColor = getComputedStyle(messageAvatar).color;
 
 
+    const previewSvg = document.querySelector("#preview-svg");
+    const previewImg = document.querySelector("#preview-image");
 
 
     inputAvatar.addEventListener('change', (e) => {
         const file =e.target.files[0];
-        console.log(file);
+        if (!file) return;
+        if(!file.type.startsWith("image/"))
+            return;
 
         const fileSize = file.size;
         const fileType = file.type;
@@ -26,6 +30,15 @@ document.addEventListener("DOMContentLoaded", function(){
                 sizeAlert();
             } else{
                 cleanSizeAlert()
+                const reader = new FileReader();
+
+        reader.onload = () => {
+            previewImg.src = reader.result;
+            previewImg.hidden = false;
+            previewSvg.hidden = true;
+        };
+
+        reader.readAsDataURL(file);
             }
 
     }); 

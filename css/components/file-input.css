@@ -33,6 +33,13 @@
   border: 1px solid var(--neutral700);
 }
 
+#preview-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
 .file-input__native {
   height: 100%;
   width: 100%;
