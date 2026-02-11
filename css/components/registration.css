@@ -1,0 +1,14 @@
+.registration {
+  max-width: 32.6rem;
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 7.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.registration-form {
+  width: 100%;
+}
