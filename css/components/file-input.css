@@ -1,0 +1,59 @@
+.file-input {
+  padding: 0;
+  border: none;
+}
+
+.file-input__target {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.file-input__instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.file-input__icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--neutral-700);
+}
+
+.preview-image {
+  width: auto;
+  height: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.file-input__native {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  border-style: dashed;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -999em;
+}
+
+.file-input__native::-webkit-file-upload-button {
+  display: none;
+}
+
+.file-input__native:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 0.25rem var(--neutral-900),
+    0 0 0 0.3rem var(--neutral-500);
+}
