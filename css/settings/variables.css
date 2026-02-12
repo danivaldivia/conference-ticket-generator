@@ -1,11 +1,11 @@
 :root {
-  --neutral900: #0d082d;
-  --neutral700: #4b4869;
-  --neutral500: #8784a5;
-  --neutral300: #d1d0d5;
+  --neutral-900: #0d082d;
+  --neutral-700: #4b4869;
+  --neutral-500: #8784a5;
+  --neutral-300: #d1d0d5;
   --white: #ffffff;
 
-  --orange700: #e1604f;
-  --orange500: #f57463;
-  --gradient01: linear-gradient(90deg, #f37362 0%, #fff 100%);
+  --orange-700: #e1604f;
+  --orange-500: #f57463;
+  --gradient-01: linear-gradient(90deg, #f37362 0%, #fff 100%);
 }

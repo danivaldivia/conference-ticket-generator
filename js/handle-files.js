@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     const fileInput = document.querySelector("#avatar");
     const previewSvg = document.querySelector("#preview-svg");
-    const previewImg = document.querySelector("#preview-image");
+    const previewImg = document.querySelector("#preview-img");
 
     fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];

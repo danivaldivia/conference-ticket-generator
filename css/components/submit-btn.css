@@ -1,8 +1,8 @@
 .submit-btn {
-  background-color: var(--orange500);
+  background-color: var(--orange-500);
 
   font-family: "Inconsolata";
-  color: var(--neutral900);
+  color: var(--neutral-900);
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
@@ -14,12 +14,12 @@
 }
 
 .submit-btn:hover {
-  background-color: var(--orange700);
-  box-shadow: 0 0.25rem 0 0 var(--orange500);
+  background-color: var(--orange-700);
+  box-shadow: 0 0.25rem 0 0 var(--orange-500);
 }
 
 .submit-btn:focus {
   box-shadow:
-    0 0 0 0.25rem var(--neutral900) inset,
+    0 0 0 0.25rem var(--neutral-900) inset,
     0 0 0 0.25rem var(--white);
 }

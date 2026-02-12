@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
         clearInputAlert(reference);
 
         const image = document.createElement('span');
-        image.classList.add('important-icon');
+        image.classList.add('hint__icon');
 
         fetch('./assets/images/important-icon.svg')
             .then(res => res.text())
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 const svgElement = image.querySelector('svg');
 
                 svgElement.querySelectorAll('path[stroke]').forEach(path => {
-                    path.setAttribute('stroke', 'var(--orange500)');
+                    path.setAttribute('stroke', 'var(--orange-500)');
                 });
 
                 svgElement.setAttribute('width', '16');
@@ -45,12 +45,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
         const error = document.createElement('p');
         error.textContent = errorMessage;
-        error.classList ='form-field__hint'
-        error.style.color ='var(--orange500)'
+        error.classList ='hint__message'
+        error.style.color ='var(--orange-500)'
 
         
         const message = document.createElement('div');
-        message.classList='form-field__message';
+        message.classList='hint';
         message.appendChild(image);
         message.appendChild(error);
         message.classList.add('input-alert');

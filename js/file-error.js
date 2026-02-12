@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     const previewSvg = document.querySelector("#preview-svg");
-    const previewImg = document.querySelector("#preview-image");
+    const previewImg = document.querySelector("#preview-img");
 
 
     inputAvatar.addEventListener('change', (e) => {
@@ -46,12 +46,12 @@ document.addEventListener("DOMContentLoaded", function(){
     function sizeAlert(){
         svgAlert.querySelectorAll('path[stroke]').forEach((path, index) => {
             if (index === 1 || index === 2) {
-                path.setAttribute('stroke', 'var(--orange500)');
+                path.setAttribute('stroke', 'var(--orange-500)');
             }
 
 
         messageAvatar.textContent = 'File too large. Please upload a photo under 500KB.';
-        messageAvatar.style.color='var(--orange500)';
+        messageAvatar.style.color='var(--orange-500)';
         });
     }
 
