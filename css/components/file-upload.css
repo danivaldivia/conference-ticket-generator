@@ -1,15 +1,15 @@
-.file-input {
+.file-upload {
   padding: 0;
   border: none;
 }
 
-.file-input__target {
+.file-upload__target {
   text-align: center;
   width: 100%;
   position: relative;
 }
 
-.file-input__instruction {
+.file-upload__instruction {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@
   padding: 1rem;
 }
 
-.file-input__icon {
+.file-upload__icon {
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@
   object-fit: cover;
 }
 
-.file-input__native {
+.file-upload__native {
   height: 100%;
   width: 100%;
   border-radius: 0.75rem;
@@ -47,11 +47,11 @@
   text-indent: -999em;
 }
 
-.file-input__native::-webkit-file-upload-button {
+.file-upload__native::-webkit-file-upload-button {
   display: none;
 }
 
-.file-input__native:focus {
+.file-upload__native:focus {
   outline: none;
   box-shadow:
     0 0 0 0.25rem var(--neutral-900),

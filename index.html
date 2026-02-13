@@ -4,25 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/images/favicon.ico" type="image/svg" />
-
-    <link rel="stylesheet" href="./css/global/body.css" />
-    <link rel="stylesheet" href="./css/global/main.css" />
-
-    <link rel="stylesheet" href="./css/components/brand-header.css" />
-
-    <link rel="stylesheet" href="./css/components/intro.css" />
-
-    <link rel="stylesheet" href="./css/components/registration.css" />
-    <link rel="stylesheet" href="./css/components/registration-form.css" />
-
-    <link rel="stylesheet" href="./css/components/form-field.css" />
-    <link rel="stylesheet" href="./css/components/file-input.css" />
-    <link rel="stylesheet" href="./css/components/hint.css" />
-
-    <link rel="stylesheet" href="./css/components/submit-btn.css" />
-
-    <link rel="stylesheet" href="./css/settings/fonts.css" />
-    <link rel="stylesheet" href="./css/settings/variables.css" />
+    <link rel="stylesheet" href="./css/index.css" />
     <title>Conference ticket generator</title>
   </head>
   <body>
@@ -55,10 +37,10 @@
               <label for="avatar" class="form-field__label"
                 >Upload Avatar</label
               >
-              <div class="form-field__input file-input">
-                <div class="file-input__target">
-                  <div class="file-input__instruction" aria-hidden="true">
-                    <div class="file-input__icon">
+              <div class="form-field__input file-upload">
+                <div class="file-upload__target">
+                  <div class="file-upload__instruction" aria-hidden="true">
+                    <div class="file-upload__icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="30"
@@ -87,21 +69,21 @@
                         hidden
                       />
                     </div>
-                    <span class="file-input__drag-text"
+                    <span class="file-upload__drag-text"
                       >Drag and drop or click to upload</span
                     >
                   </div>
 
                   <!-- Mensaje cuando SÍ hay archivo -->
-                  <div class="file-input__status" aria-live="polite" hidden>
-                    <div class="file-input__filename"></div>
+                  <div class="file-upload__status" aria-live="polite" hidden>
+                    <div class="file-upload__filename"></div>
                   </div>
 
                   <input
                     type="file"
                     name="avatar"
                     id="avatar"
-                    class="file-input__native"
+                    class="file-upload__native"
                     aria-describedby="avatar-required"
                     accept="image/png, image/jpeg"
                     required
@@ -154,7 +136,7 @@
                 autocomplete="name"
               />
             </div>
-            <div class="form-field email-input">
+            <div class="form-field">
               <label for="email" class="form-field__label">Email Address</label>
               <input
                 type="email"
@@ -166,7 +148,7 @@
                 autocomplete="email"
               />
             </div>
-            <div class="form-field github-input">
+            <div class="form-field">
               <label for="github" class="form-field__label"
                 >GitHub Username</label
               >
@@ -181,7 +163,9 @@
               />
             </div>
 
-            <button type="submit" class="submit-btn">Generate My Ticket</button>
+            <button type="submit" class="registration__submit">
+              Generate My Ticket
+            </button>
           </fieldset>
         </form>
       </section>
