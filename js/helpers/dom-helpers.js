@@ -1,10 +1,4 @@
-import { SVGicon } from "./svg-icon.js";
-
-export function validateEmail(email) {
-  const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-  const result = regex.test(email);
-  return result;
-}
+import { createSvgIcon } from "../components/svg-icon.js";
 
 export function clearInputAlert(reference) {
   const alert = reference.querySelector(".input-alert");
@@ -16,8 +10,6 @@ export function clearInputAlert(reference) {
 export function showInputAlert(errorMessage, reference) {
   clearInputAlert(reference);
 
-  SVGicon();
-
   const error = document.createElement("p");
   error.classList.add("hint__message");
   error.textContent = errorMessage;
@@ -25,7 +17,7 @@ export function showInputAlert(errorMessage, reference) {
 
   const message = document.createElement("div");
   message.classList.add("input-alert", "hint");
-  message.appendChild(SVGicon({ color: "currentColor" }));
+  message.appendChild(createSvgIcon({ color: "var(--orange-500)" }));
   message.appendChild(error);
 
   reference.appendChild(message);

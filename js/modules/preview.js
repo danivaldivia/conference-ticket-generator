@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-import { sizeAlert, cleanSizeAlert } from "./preview-functions.js";
-
 import {
   inputAvatar,
   maxSize,
@@ -8,9 +6,22 @@ import {
   originalMessageColor,
   previewSvg,
   previewImg,
-} from "./selectors.js";
+  svgAlert,
+  messageAvatar,
+} from "../constants/selectors.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+function sizeAlert(strokeColor, alertMessage, alertColor) {
+  svgAlert.querySelectorAll("path[stroke]").forEach((path, index) => {
+    if (index === 1 || index === 2) {
+      path.setAttribute("stroke", strokeColor);
+    }
+
+    messageAvatar.textContent = alertMessage;
+    messageAvatar.style.color = alertColor;
+  });
+}
+
+export function initPreview() {
   inputAvatar.addEventListener("change", (e) => {
     const file = e.target.files[0];
     if (!file) {
@@ -30,11 +41,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (fileSize > maxSize) {
       sizeAlert(
+        "var(--orange-500)",
         "File too large. Please upload a photo under 500KB.",
         "var(--orange-500)",
       );
     } else {
-      cleanSizeAlert(originalMessageText, originalMessageColor);
+      sizeAlert("currentColor", originalMessageText, originalMessageColor);
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -46,4 +58,4 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.readAsDataURL(file);
     }
   });
-});
+}

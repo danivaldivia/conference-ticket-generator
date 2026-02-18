@@ -1,15 +1,16 @@
-export function SVGicon({ color = "currentColor" }) {
-  const icon = document.createElement("svg");
+export function createSvgIcon({ color = "currentColor" }) {
+  const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   icon.setAttribute("stroke", color);
   icon.setAttribute("fill", "none");
   icon.setAttribute("width", "24");
   icon.setAttribute("height", "24");
-  icon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  icon.setAttribute("viewBox", "0 0 24 24");
   icon.classList.add("hint__icon");
-
   icon.innerHTML = `
 <path d="M3 12C3 16.9699 7.02908 21 12 21C16.9709 21 21 16.9699 21 12C21 7.02908 16.9709 3 12 3C7.02908 3 3 7.02908 3 12Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M12.0057 15.6932V11.3936V15.6932ZM12 8.35426V8.29102V8.35426Z"/>
 <path d="M12.0057 15.6932V11.3936M12 8.35426V8.29102" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   `;
+
+  return icon;
 }
