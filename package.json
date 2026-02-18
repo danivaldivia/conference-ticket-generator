@@ -1,0 +1,28 @@
+{
+  "name": "conference-ticket",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000c\u0000o\u0000n\u0000f\u0000e\u0000r\u0000e\u0000n\u0000c\u0000e\u0000-\u0000t\u0000i\u0000c\u0000k\u0000e\u0000t\u0000-\u0000g\u0000e\u0000n\u0000e\u0000r\u0000a\u0000t\u0000o\u0000r\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danivaldivia/conference-ticket-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danivaldivia/conference-ticket-generator/issues"
+  },
+  "homepage": "https://github.com/danivaldivia/conference-ticket-generator#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.3.0",
+    "prettier": "^3.8.1"
+  }
+}

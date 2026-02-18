@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { sizeAlert, cleanSizeAlert } from "./preview-functions.js";
 
 import {
@@ -12,8 +13,12 @@ import {
 document.addEventListener("DOMContentLoaded", function () {
   inputAvatar.addEventListener("change", (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-    if (!file.type.startsWith("image/")) return;
+    if (!file) {
+      return;
+    }
+    if (!file.type.startsWith("image/")) {
+      return;
+    }
 
     const fileSize = file.size;
     const fileType = file.type;
