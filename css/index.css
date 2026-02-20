@@ -12,3 +12,5 @@
 
 @import url("./settings/fonts.css");
 @import url("./settings/variables.css");
+
+@import url("./components/upload-status.css");

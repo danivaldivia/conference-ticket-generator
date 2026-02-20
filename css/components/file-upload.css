@@ -45,6 +45,7 @@
   top: 0;
   left: 0;
   text-indent: -999em;
+  z-index: 1;
 }
 
 .file-upload__native::-webkit-file-upload-button {
