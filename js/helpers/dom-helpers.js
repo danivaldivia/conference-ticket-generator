@@ -1,14 +1,14 @@
 import { createSvgIcon } from "../components/svg-icon.js";
 
-export function clearInputAlert(reference) {
-  const alert = reference.querySelector(".input-alert");
+export function clearInputAlert(element) {
+  const alert = element.querySelector(".input-alert");
   if (alert) {
     alert.remove();
   }
 }
 
-export function showInputAlert(errorMessage, reference) {
-  clearInputAlert(reference);
+export function showInputAlert(errorMessage, element) {
+  clearInputAlert(element);
 
   const error = document.createElement("p");
   error.classList.add("hint__message");
@@ -20,5 +20,5 @@ export function showInputAlert(errorMessage, reference) {
   message.appendChild(createSvgIcon({ color: "var(--orange-500)" }));
   message.appendChild(error);
 
-  reference.appendChild(message);
+  element.appendChild(message);
 }

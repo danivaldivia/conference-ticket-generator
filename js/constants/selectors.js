@@ -3,8 +3,9 @@ export const inputGitHub = document.querySelector("#github");
 
 export const svgAlert = document.querySelector("#file-error");
 export const inputAvatar = document.querySelector("#avatar");
+export const MAX_FILE_SIZE = 200 * 1024;
+
 export const messageAvatar = document.querySelector("#avatar-required");
-export const maxSize = 200 * 1024;
 export const originalMessageText =
   document.querySelector("#avatar-required").textContent;
 export const originalMessageColor = getComputedStyle(messageAvatar).color;

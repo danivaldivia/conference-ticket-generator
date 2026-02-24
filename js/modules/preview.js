@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
 import {
   inputAvatar,
-  maxSize,
+  MAX_FILE_SIZE,
   originalMessageText,
   originalMessageColor,
   previewSvg,
@@ -43,14 +42,8 @@ function validPreview(e) {
   }
 
   const fileSize = file.size;
-  const fileType = file.type;
 
-  if (file) {
-    console.log(`Peso: ${(fileSize / 1024).toFixed(2)} KB`);
-    console.log(`Formato: ${fileType}`);
-  }
-
-  if (fileSize > maxSize) {
+  if (fileSize > MAX_FILE_SIZE) {
     sizeAlert(
       "var(--orange-500)",
       "File too large. Please upload a photo under 500KB.",
