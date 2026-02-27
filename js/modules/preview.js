@@ -1,27 +1,23 @@
 import {
   inputAvatar,
   originalMessageText,
-  originalMessageColor,
   previewSvg,
   previewImg,
-  svgAlert,
   messageAvatar,
   uploadDrag,
   uploadStatus,
   removeBtn,
+  originalMessageColor,
+  hintContainer,
 } from "../constants/selectors.js";
 import { showInputAlert } from "../helpers/dom-helpers.js";
 import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
 
-function sizeAlert(strokeColor, alertMessage, alertColor) {
-  svgAlert.querySelectorAll("path[stroke]").forEach((path, index) => {
-    if (index === 1 || index === 2) {
-      path.setAttribute("stroke", strokeColor);
-    }
-
-    messageAvatar.textContent = alertMessage;
-    messageAvatar.style.color = alertColor;
-  });
+function sizeAlert(alertMessage, alertColor, messageColor) {
+  hintContainer.classList.remove("hint--error");
+  messageAvatar.textContent = alertMessage;
+  messageAvatar.style.color = messageColor;
+  hintContainer.classList.add(alertColor);
 }
 
 function removeAvatar() {
@@ -37,7 +33,7 @@ function validPreview(e) {
   const file = e.target.files[0];
   const fileSize = file.size;
 
-  if (!file && !file.type.startsWith("image/")) {
+  if (!file) {
     return;
   }
 
@@ -48,12 +44,11 @@ function validPreview(e) {
 
   if (fileSize > MAX_FILE_SIZE) {
     sizeAlert(
-      "var(--orange-500)",
       "File too large. Please upload a photo under 500KB.",
-      "var(--orange-500)",
+      "hint--error",
     );
   } else {
-    sizeAlert("currentColor", originalMessageText, originalMessageColor);
+    sizeAlert(originalMessageText, "hint", originalMessageColor);
 
     const reader = new FileReader();
     reader.onload = () => {
