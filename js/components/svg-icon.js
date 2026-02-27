@@ -1,9 +1,13 @@
-export function createSvgIcon({ color = "currentColor" }) {
+export function createSvgIcon({
+  color = "currentColor",
+  width = 24,
+  height = 24,
+}) {
   const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   icon.setAttribute("stroke", color);
   icon.setAttribute("fill", "none");
-  icon.setAttribute("width", "24");
-  icon.setAttribute("height", "24");
+  icon.setAttribute("width", width);
+  icon.setAttribute("height", height);
   icon.setAttribute("viewBox", "0 0 24 24");
   icon.classList.add("hint__icon");
   icon.innerHTML = `

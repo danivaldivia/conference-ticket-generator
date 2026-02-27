@@ -1,5 +1,5 @@
 export function validateEmail(email) {
-  const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  const regex = /^[a-zA-ZÀ-ÿ\s]{2,}\s[a-zA-ZÀ-ÿ\s]{2,}$/;
   const result = regex.test(email);
   return result;
 }

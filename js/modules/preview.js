@@ -1,6 +1,5 @@
 import {
   inputAvatar,
-  MAX_FILE_SIZE,
   originalMessageText,
   originalMessageColor,
   previewSvg,
@@ -11,6 +10,8 @@ import {
   uploadStatus,
   removeBtn,
 } from "../constants/selectors.js";
+import { showInputAlert } from "../helpers/dom-helpers.js";
+import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
 
 function sizeAlert(strokeColor, alertMessage, alertColor) {
   svgAlert.querySelectorAll("path[stroke]").forEach((path, index) => {
@@ -34,14 +35,16 @@ function removeAvatar() {
 
 function validPreview(e) {
   const file = e.target.files[0];
-  if (!file) {
-    return;
-  }
-  if (!file.type.startsWith("image/")) {
+  const fileSize = file.size;
+
+  if (!file && !file.type.startsWith("image/")) {
     return;
   }
 
-  const fileSize = file.size;
+  if (!ALLOWED_FILES_TYPES.includes(file.type)) {
+    showInputAlert("Invalid format", e.target.parentElement);
+    return;
+  }
 
   if (fileSize > MAX_FILE_SIZE) {
     sizeAlert(

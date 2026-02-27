@@ -17,8 +17,9 @@ export function showInputAlert(errorMessage, element) {
 
   const message = document.createElement("div");
   message.classList.add("input-alert", "hint");
-  message.appendChild(createSvgIcon({ color: "var(--orange-500)" }));
+  message.appendChild(
+    createSvgIcon({ color: "var(--orange-500)", width: 16, height: 16 }),
+  );
   message.appendChild(error);
-
   element.appendChild(message);
 }
