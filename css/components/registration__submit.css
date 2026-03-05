@@ -13,6 +13,10 @@
   padding: 1rem 1.5rem;
 }
 
+.registartion__submit--disabled {
+  opacity: 0.5;
+}
+
 .registration__submit:hover {
   background-color: var(--orange-700);
   box-shadow: 0 0.25rem 0 0 var(--orange-500);

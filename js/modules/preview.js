@@ -12,6 +12,8 @@ import {
 } from "../constants/selectors.js";
 import { showInputAlert } from "../helpers/dom-helpers.js";
 import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
+import { validateRegistration } from "../modules/validation.js";
+import { checkRegistration } from "../constants/input.js";
 
 function sizeAlert(alertMessage, alertColor, messageColor) {
   hintContainer.classList.remove("hint--error");
@@ -27,11 +29,12 @@ function removeAvatar() {
   previewSvg.hidden = false;
   uploadStatus.hidden = true;
   uploadDrag.hidden = false;
+  checkRegistration.avatar = "";
+  validateRegistration();
 }
 
 function validPreview(e) {
   const file = e.target.files[0];
-  const fileSize = file.size;
 
   if (!file) {
     return;
@@ -42,6 +45,7 @@ function validPreview(e) {
     return;
   }
 
+  const fileSize = file.size;
   if (fileSize > MAX_FILE_SIZE) {
     sizeAlert(
       "File too large. Please upload a photo under 500KB.",
@@ -61,7 +65,13 @@ function validPreview(e) {
     };
 
     reader.readAsDataURL(file);
+
+    checkRegistration.avatar = "";
+    validateRegistration();
   }
+
+  checkRegistration.avatar = file.name;
+  validateRegistration();
 }
 
 export function initPreview() {

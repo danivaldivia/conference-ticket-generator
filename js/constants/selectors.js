@@ -2,6 +2,8 @@ export const inputEmail = document.querySelector("#email");
 export const inputGitHub = document.querySelector("#github");
 export const inputFullName = document.querySelector("#full-name");
 
+export const btnSubmit = document.querySelector("#submit");
+
 export const svgAlert = document.querySelector("#file-error");
 export const inputAvatar = document.querySelector("#avatar");
 

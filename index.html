@@ -77,9 +77,9 @@
                   <!-- Mensaje cuando SÍ hay archivo -->
                   <div class="file-upload__status" aria-live="polite" hidden>
                     <button
-                      type="button"
                       class="upload__status--btn"
                       id="remove-btn"
+                      type="button"
                     >
                       Remove image
                     </button>
@@ -142,7 +142,7 @@
               <label for="full-name" class="form-field__label">Full Name</label>
               <input
                 type="text"
-                name="full-name"
+                name="fullname"
                 id="full-name"
                 required
                 class="form-field__input"
@@ -177,7 +177,12 @@
               />
             </div>
 
-            <button type="submit" class="registration__submit">
+            <button
+              type="submit"
+              id="submit"
+              class="registration__submit registartion__submit--disabled"
+              disabled
+            >
               Generate My Ticket
             </button>
           </fieldset>
