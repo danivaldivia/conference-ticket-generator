@@ -3,3 +3,7 @@ export function validateEmail(email) {
   const result = emailPattern.test(email);
   return result;
 }
+
+export function validateUser(userName) {
+  return typeof userName === "string" && userName.trim() !== "";
+}

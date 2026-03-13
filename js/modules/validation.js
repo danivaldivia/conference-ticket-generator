@@ -1,5 +1,5 @@
 import { showInputAlert, clearInputAlert } from "../helpers/dom-helpers.js";
-import { validateEmail } from "../helpers/validators.js";
+import { validateEmail, validateUser } from "../helpers/validators.js";
 import {
   inputEmail,
   inputGitHub,
@@ -9,39 +9,24 @@ import {
 
 import { checkRegistration } from "../constants/input.js";
 
-function validateInput(e) {
-  if (e.target.value.trim() === "") {
-    if (e.target.id === "full-name") {
-      showInputAlert(`Please enter a valid name`, e.target.parentElement);
-    } else {
-      showInputAlert(
-        `Please enter a valid ${e.target.id} address`,
-        e.target.parentElement,
-      );
-      checkRegistration[e.target.name] = "";
-      validateRegistration();
-    }
-    return;
-  }
+function validateInput(event, validator, errorMessage) {
+  const value = event.target.value;
+  const container = event.target.parentElement;
 
-  if (e.target.id === "email" && !validateEmail(e.target.value)) {
-    showInputAlert(
-      `Please enter a valid ${e.target.id} address`,
-      e.target.parentElement,
-    );
-    checkRegistration[e.target.name] = "";
+  if (value.trim() === "" || !validator(value)) {
+    showInputAlert(errorMessage, container);
+
     validateRegistration();
     return;
+  } else {
+    clearInputAlert(container);
+    checkRegistration[event.target.name] = value.trim().toLowerCase();
   }
 
-  clearInputAlert(e.target.parentElement);
-
-  checkRegistration[e.target.name] = e.target.value.trim().toLowerCase();
   validateRegistration();
 }
 
 export function validateRegistration() {
-  console.log(checkRegistration);
   if (Object.values(checkRegistration).includes("")) {
     btnSubmit.classList.add("registartion__submit--disabled");
     btnSubmit.disabled = true;
@@ -52,7 +37,17 @@ export function validateRegistration() {
 }
 
 export function initValidation() {
-  inputEmail.addEventListener("blur", validateInput);
-  inputGitHub.addEventListener("blur", validateInput);
-  inputFullName.addEventListener("blur", validateInput);
+  inputEmail.addEventListener("blur", (e) =>
+    validateInput(
+      e,
+      validateEmail,
+      `Please enter a valid ${e.target.id} address`,
+    ),
+  );
+  inputGitHub.addEventListener("blur", (e) =>
+    validateInput(e, validateUser, `Please enter a valid ${e.target.id} user`),
+  );
+  inputFullName.addEventListener("blur", (e) =>
+    validateInput(e, validateUser, `Please enter a valid ${e.target.id}`),
+  );
 }
