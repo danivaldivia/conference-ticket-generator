@@ -15,7 +15,7 @@ function validateInput(event, validator, errorMessage) {
 
   if (value.trim() === "" || !validator(value)) {
     showInputAlert(errorMessage, container);
-
+    checkRegistration[event.target.name] = "";
     validateRegistration();
     return;
   } else {
