@@ -1,3 +1,7 @@
+.registration-form {
+  width: 100%;
+}
+
 .registration-form__fieldset {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,22 @@
+.file-upload__status {
+  padding-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.upload__status--btn {
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-style: none;
+  color: var(--white);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-family: inconsolata;
+  cursor: pointer;
+}
+
+.upload__status--btn:hover {
+  text-decoration: underline;
+}
