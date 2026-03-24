@@ -1,5 +1,5 @@
-@import url("./global/body.css");
-@import url("./global/main.css");
+@import url("../shared/global/body.css");
+@import url("../shared/global/main.css");
 
 @import url("./components/brand-header.css");
 @import url("./components/intro.css");
@@ -9,8 +9,7 @@
 @import url("./components/file-upload.css");
 @import url("./components/hint.css");
 @import url("./components/registration__submit.css");
-
-@import url("./settings/fonts.css");
-@import url("./settings/variables.css");
-
 @import url("./components/upload-status.css");
+
+@import url("../shared/settings/fonts.css");
+@import url("../shared/settings/variables.css");
