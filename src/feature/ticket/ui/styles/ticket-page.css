@@ -3,3 +3,7 @@
 
 @import url("../shared/settings/fonts.css");
 @import url("../shared/settings/variables.css");
+
+@import url("../ticket-page/components/brand-header.css");
+@import url("../ticket-page/components/intro.css");
+@import url("../ticket-page/components/ticket.css");
