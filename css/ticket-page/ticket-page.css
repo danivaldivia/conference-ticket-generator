@@ -7,3 +7,7 @@
 @import url("../ticket-page/components/brand-header.css");
 @import url("../ticket-page/components/intro.css");
 @import url("../ticket-page/components/ticket.css");
+@import url("../ticket-page/components/ticket-general-info.css");
+@import url("../ticket-page/components/ticket-personal-info.css");
+@import url("../ticket-page/components/ticket-grid.css");
+@import url("../ticket-page/components/ticket-number.css");

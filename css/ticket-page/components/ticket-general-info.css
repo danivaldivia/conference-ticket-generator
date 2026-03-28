@@ -1,0 +1,41 @@
+.ticket-general-info {
+  grid-area: box-1;
+  display: flex;
+  width: auto;
+  gap: 12px;
+  background-color: red;
+}
+
+.ticket-general-info__brand {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.ticket-general-info__brand--logo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.ticket-general-info__brand--logo img {
+  width: 100%;
+  height: auto;
+}
+
+.ticket-general-info__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ticket-general-info__brand-name {
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -0.001em;
+  font-weight: bold;
+}
+
+.ticket-general-info__date {
+  margin: 0;
+  color: var(--neutral-300);
+}

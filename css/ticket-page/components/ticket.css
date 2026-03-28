@@ -1,12 +1,15 @@
-.ticket {
+.ticket-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 21.5rem;
-  height: 10rem;
+  /* width: 344px;
+  height: 160px; */
+  /* position: absolute;
+  top: 360px;
+  bottom: 292px; */
 }
 
-.ticket svg {
+.ticker-svg svg {
   width: 100%;
   height: auto;
 }

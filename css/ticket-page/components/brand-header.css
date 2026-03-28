@@ -23,17 +23,6 @@
   font-weight: bold;
 }
 
-.intro__title--effect {
-  background: linear-gradient(90deg, #f37362 0%, #fff 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.intro__title--highlight {
-  color: var(--orange-500);
-}
-
 @media screen and (min-width: 768px) {
   .brand-header {
     padding-block: 2.5rem;
