@@ -12,7 +12,7 @@ import {
 } from "../constants/selectors.js";
 import { showInputAlert } from "../helpers/dom-helpers.js";
 import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
-import { validateRegistration } from "../modules/validation.js";
+import { validateRegistration } from "./validation.js";
 import { checkRegistration } from "../constants/input.js";
 
 function sizeAlert(alertMessage, alertColor, messageColor) {

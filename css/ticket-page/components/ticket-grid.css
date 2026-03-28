@@ -1,0 +1,10 @@
+.ticket-grid {
+  width: 100%;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas:
+    "box-1 box-3"
+    "box-2 box-3";
+}

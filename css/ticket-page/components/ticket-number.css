@@ -1,0 +1,12 @@
+.ticket-number {
+  grid-area: box-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: brown;
+}
+
+.number {
+  margin: 0;
+  transform: rotate(90deg);
+}

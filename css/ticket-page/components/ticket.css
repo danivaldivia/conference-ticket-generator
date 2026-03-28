@@ -1,0 +1,15 @@
+.ticket-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 344px;
+  height: 160px; */
+  /* position: absolute;
+  top: 360px;
+  bottom: 292px; */
+}
+
+.ticker-svg svg {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,50 @@
+.ticket-personal-info {
+  grid-area: box-2;
+  display: flex;
+  width: auto;
+  gap: 12px;
+  background-color: blue;
+}
+
+.ticket-personal-info__avatar {
+  width: 45px;
+  height: 45px;
+}
+
+.ticket-personal-info__avatar img {
+  width: 100%;
+  height: auto;
+}
+
+.ticket-personal-info__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.ticket-personal-info___data--github-user {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+}
+
+.git-hub_icon {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  align-items: end;
+}
+
+.git-hub_icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.ticket-personal-info___data--full-name {
+  margin: 0;
+}
+
+.ticket-personal-info__github-user {
+  margin: 0;
+}
