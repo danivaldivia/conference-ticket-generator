@@ -1,4 +1,4 @@
-import { createSvgIcon } from "../components/svg-icon.js";
+import { createSvgIcon } from "../ui/components/svg-icon.js";
 
 export function clearInputAlert(element) {
   const alert = element.querySelector(".input-alert");
