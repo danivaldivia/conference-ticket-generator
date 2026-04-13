@@ -5,4 +5,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector("#user-name").textContent = `${userName}!`;
   document.querySelector("#user-email").textContent = userEmail;
+  document.title = `Conference ticket for ${userName}`;
 });
