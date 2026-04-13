@@ -26,6 +26,17 @@
   max-width: 32rem;
 }
 
+.intro__title--effect {
+  background: linear-gradient(90deg, #f37362 0%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro__title--highlight {
+  color: var(--orange-500);
+}
+
 @media screen and (min-width: 768px) {
   .intro__title {
     font-size: 3.75rem;

@@ -1,5 +1,9 @@
 import { showInputAlert, clearInputAlert } from "../utils/dom-helpers.js";
-import { validateEmail, validateUser } from "../utils/validators.js";
+import {
+  validateEmail,
+  validateUser,
+  validateGithub,
+} from "../utils/validators.js";
 import {
   inputEmail,
   inputGitHub,
@@ -45,7 +49,11 @@ export function initValidation() {
     ),
   );
   inputGitHub.addEventListener("blur", (e) =>
-    validateInput(e, validateUser, `Please enter a valid ${e.target.id} user`),
+    validateInput(
+      e,
+      validateGithub,
+      `Please enter a valid ${e.target.id} user`,
+    ),
   );
   inputFullName.addEventListener("blur", (e) =>
     validateInput(e, validateUser, `Please enter a valid ${e.target.id}`),
