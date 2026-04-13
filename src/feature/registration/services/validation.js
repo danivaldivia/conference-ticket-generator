@@ -1,5 +1,5 @@
-import { showInputAlert, clearInputAlert } from "../helpers/dom-helpers.js";
-import { validateEmail, validateUser } from "../helpers/validators.js";
+import { showInputAlert, clearInputAlert } from "../utils/dom-helpers.js";
+import { validateEmail, validateUser } from "../utils/validators.js";
 import {
   inputEmail,
   inputGitHub,

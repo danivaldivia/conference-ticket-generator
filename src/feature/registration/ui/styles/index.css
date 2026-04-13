@@ -1,0 +1,15 @@
+@import url("../../../../shared/global/body.css");
+@import url("../../../../shared/global/main.css");
+
+@import url("../styles/brand-header.css");
+@import url("../styles/intro.css");
+@import url("../styles/registration.css");
+@import url("../styles/registration-form.css");
+@import url("../styles/form-field.css");
+@import url("../styles/file-upload.css");
+@import url("../styles/hint.css");
+@import url("../styles/registration__submit.css");
+@import url("../styles/upload-status.css");
+
+@import url("../../../../shared/settings/fonts.css");
+@import url("../../../../shared/settings/variables.css");
