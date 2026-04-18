@@ -11,11 +11,7 @@ import {
   hintContainer,
 } from "../constants/selectors.js";
 import { showInputAlert } from "../utils/dom-helpers.js";
-import {
-  MIN_FILE_SIZE,
-  MAX_FILE_SIZE,
-  ALLOWED_FILES_TYPES,
-} from "../constants/file-form.js";
+import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
 import { validateRegistration } from "../services/validation.js";
 import { checkRegistration } from "../constants/input.js";
 
@@ -50,12 +46,7 @@ function validPreview(e) {
   }
 
   const fileSize = file.size;
-  if (fileSize <= MIN_FILE_SIZE) {
-    sizeAlert(
-      "File too small. Please upload a photo larger than 200KB.",
-      "hint--error",
-    );
-  } else if (fileSize > MAX_FILE_SIZE) {
+  if (fileSize > MAX_FILE_SIZE) {
     sizeAlert(
       "File too large. Please upload a photo under 500KB.",
       "hint--error",
