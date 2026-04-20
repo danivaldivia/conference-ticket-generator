@@ -41,21 +41,31 @@ export function validateRegistration() {
 }
 
 export function initValidation() {
-  inputEmail.addEventListener("blur", (e) =>
-    validateInput(
-      e,
-      validateEmail,
-      `Please enter a valid ${e.target.id} address`,
-    ),
-  );
-  inputGitHub.addEventListener("blur", (e) =>
-    validateInput(
-      e,
-      validateGithub,
-      `Please enter a valid ${e.target.id} user`,
-    ),
-  );
-  inputFullName.addEventListener("blur", (e) =>
-    validateInput(e, validateUser, `Please enter a valid ${e.target.id}`),
-  );
+  const input = [
+    {
+      element: inputEmail,
+      validator: validateEmail,
+      msg: (el) => `Please enter a valid ${el.id} address`,
+    },
+    {
+      element: inputGitHub,
+      validator: validateGithub,
+      msg: (el) => `Please enter a valr ${el.id} user`,
+    },
+    {
+      element: inputFullName,
+      validator: validateUser,
+      msg: (el) => `Please enter a valid ${el.id}`,
+    },
+  ];
+
+  input.forEach(({ element, validator, msg }) => {
+    const errorMsg = msg(element);
+    element.addEventListener("blur", (e) => {
+      validateInput(e, validator, errorMsg);
+    });
+    element.addEventListener("input", (e) => {
+      validateInput(e, validator, errorMsg);
+    });
+  });
 }
