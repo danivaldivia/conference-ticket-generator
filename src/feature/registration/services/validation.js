@@ -50,7 +50,7 @@ export function initValidation() {
     {
       element: inputGitHub,
       validator: validateGithub,
-      msg: (el) => `Please enter a valr ${el.id} user`,
+      msg: (el) => `Please enter a valid ${el.id} user (e.g. @username)`,
     },
     {
       element: inputFullName,

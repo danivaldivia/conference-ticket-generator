@@ -9,6 +9,7 @@ import {
   removeBtn,
   originalMessageColor,
   hintContainer,
+  changeBtn,
 } from "../constants/selectors.js";
 import { showInputAlert } from "../utils/dom-helpers.js";
 import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
@@ -76,5 +77,8 @@ function validPreview(e) {
 
 export function initPreview() {
   inputAvatar.addEventListener("change", validPreview);
+  changeBtn.addEventListener("click", () => {
+    inputAvatar.click();
+  });
   removeBtn.addEventListener("click", removeAvatar);
 }
