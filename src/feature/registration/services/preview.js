@@ -9,6 +9,7 @@ import {
   removeBtn,
   originalMessageColor,
   hintContainer,
+  changeBtn,
 } from "../constants/selectors.js";
 import { showInputAlert } from "../utils/dom-helpers.js";
 import { MAX_FILE_SIZE, ALLOWED_FILES_TYPES } from "../constants/file-form.js";
@@ -33,48 +34,56 @@ function removeAvatar() {
   validateRegistration();
 }
 
-function validPreview(e) {
-  const file = e.target.files[0];
-
+function processFile(file) {
   if (!file) {
     return;
   }
 
   if (!ALLOWED_FILES_TYPES.includes(file.type)) {
-    showInputAlert("Invalid format", e.target.parentElement);
+    showInputAlert("Invalid format", inputAvatar.parentElement);
     return;
   }
 
-  const fileSize = file.size;
-  if (fileSize > MAX_FILE_SIZE) {
+  if (file.size > MAX_FILE_SIZE) {
     sizeAlert(
       "File too large. Please upload a photo under 500KB.",
       "hint--error",
     );
   } else {
     sizeAlert(originalMessageText, "hint", originalMessageColor);
-
     const reader = new FileReader();
     reader.onload = () => {
       previewImg.src = reader.result;
       previewImg.hidden = false;
       previewSvg.hidden = true;
-
       uploadStatus.hidden = false;
       uploadDrag.hidden = true;
     };
-
     reader.readAsDataURL(file);
 
-    checkRegistration.avatar = "";
+    checkRegistration.avatar = file.name;
     validateRegistration();
   }
+}
 
-  checkRegistration.avatar = file.name;
-  validateRegistration();
+function validPreview(e) {
+  processFile(e.target.files[0]);
 }
 
 export function initPreview() {
   inputAvatar.addEventListener("change", validPreview);
+  changeBtn.addEventListener("click", () => {
+    inputAvatar.click();
+  });
   removeBtn.addEventListener("click", removeAvatar);
+}
+
+export function syncAvatar() {
+  const file = inputAvatar.files[0];
+
+  if (file) {
+    processFile(file);
+  } else {
+    removeAvatar();
+  }
 }

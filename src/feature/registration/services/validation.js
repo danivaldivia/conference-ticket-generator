@@ -1,5 +1,9 @@
 import { showInputAlert, clearInputAlert } from "../utils/dom-helpers.js";
-import { validateEmail, validateUser } from "../utils/validators.js";
+import {
+  validateEmail,
+  validateUser,
+  validateGithub,
+} from "../utils/validators.js";
 import {
   inputEmail,
   inputGitHub,
@@ -9,21 +13,22 @@ import {
 
 import { checkRegistration } from "../constants/input.js";
 
-function validateInput(event, validator, errorMessage) {
-  const value = event.target.value;
-  const container = event.target.parentElement;
+function performValidation(element, validator, errorMessage) {
+  const value = element.value;
+  const container = element.parentElement;
 
   if (value.trim() === "" || !validator(value)) {
     showInputAlert(errorMessage, container);
-    checkRegistration[event.target.name] = "";
-    validateRegistration();
-    return;
+    checkRegistration[element.name] = "";
   } else {
     clearInputAlert(container);
-    checkRegistration[event.target.name] = value.trim().toLowerCase();
+    checkRegistration[element.name] = value.trim().toLowerCase();
   }
-
   validateRegistration();
+}
+
+function validateInput(event, validator, errorMessage) {
+  performValidation(event.target, validator, errorMessage);
 }
 
 export function validateRegistration() {
@@ -36,18 +41,40 @@ export function validateRegistration() {
   }
 }
 
+const inputs = [
+  {
+    element: inputEmail,
+    validator: validateEmail,
+    msg: (el) => `Please enter a valid ${el.id} address`,
+  },
+  {
+    element: inputGitHub,
+    validator: validateGithub,
+    msg: (el) => `Please enter a valid ${el.id} user (e.g. @username)`,
+  },
+  {
+    element: inputFullName,
+    validator: validateUser,
+    msg: (el) => `Please enter a valid ${el.id}`,
+  },
+];
+
 export function initValidation() {
-  inputEmail.addEventListener("blur", (e) =>
-    validateInput(
-      e,
-      validateEmail,
-      `Please enter a valid ${e.target.id} address`,
-    ),
-  );
-  inputGitHub.addEventListener("blur", (e) =>
-    validateInput(e, validateUser, `Please enter a valid ${e.target.id} user`),
-  );
-  inputFullName.addEventListener("blur", (e) =>
-    validateInput(e, validateUser, `Please enter a valid ${e.target.id}`),
-  );
+  inputs.forEach(({ element, validator, msg }) => {
+    const errorMsg = msg(element);
+    element.addEventListener("blur", (e) => {
+      validateInput(e, validator, errorMsg);
+    });
+    element.addEventListener("input", (e) => {
+      validateInput(e, validator, errorMsg);
+    });
+  });
+}
+
+export function syncInputs() {
+  inputs.forEach(({ element, validator, msg }) => {
+    if (element.value.trim() !== "") {
+      performValidation(element, validator, msg(element));
+    }
+  });
 }

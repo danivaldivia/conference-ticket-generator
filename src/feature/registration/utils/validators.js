@@ -7,3 +7,9 @@ export function validateEmail(email) {
 export function validateUser(userName) {
   return typeof userName === "string" && userName.trim() !== "";
 }
+
+export function validateGithub(userGithub) {
+  const userPattern = /^@[a-zA-Z0-9_]+/;
+  const result = userPattern.test(userGithub);
+  return result;
+}
